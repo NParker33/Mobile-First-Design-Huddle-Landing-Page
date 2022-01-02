@@ -18,50 +18,52 @@ body {
     height: 110vh;
 }
 
-h1 {
-    font-family: Poppins, sans-serif;
-    margin: 15px 0;
-    font-weight: 600;
-    font-size: 25px;
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    height: 100%;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+header {
+    background-image: url('../img/bg-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    grid-column: 1/-1;
 }
 
 #logo {
     width: 30%;
-    margin-top: 5%;
-    margin-left: 5%;
+    margin: 20px;
 }
 
-header {
-    height: 50vh;
-    background-image: url('../img/bg-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.mockups {
+.mockups{
     display: flex;
 }
 
 #mockups {
     width: 75%;
-    margin: 75px auto;
+    margin: 25px auto;
 }
 
 section {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    grid-row: 2;
+    grid-column: 1 /-1;
+}
+
+section h1 {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    padding: 15px;
 }
 
 section p {
-    margin-bottom: 10%;
-    padding: 10px;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.7;
+    padding: 15px;
+    margin-bottom: 30px;
 }
 
 .btn {
@@ -83,6 +85,8 @@ footer {
     padding: 50px;
     display: flex;
     justify-content: center;
+    grid-row: 3;
+    grid-column: 1/-1;
 }
 
 .fa {
@@ -96,30 +100,33 @@ footer {
     color: var(--secondary);
 }
 
-@media screen and (min-width: 1400px){
-    .container {
-        display: grid;
-        grid-template-columns: repeat(12,1fr);
-        height: 100%;
+@media screen and (min-width: 500px){
+    section h1{
+        font-size: 32px;
     }
+    section p {
+        font-size: 20px;
+    }
+    .btn {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 900px){
     header {
         height: 100%;
         background-image: none;
         grid-column: 2 / span 8;
         grid-row: 1;
     }
-    #logo{
-        width: 15%;
-        margin-bottom: 10px;
-        margin-left: 0;
-    }
+
     #mockups {
-        margin: 20px 0 0 0;
+        margin: 125px 0 0 0;
     }
     body {
         background-image: url('../img/bg-desktop.svg');
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% 110%;
         background-position: center;
         height: 100%;
     }
@@ -131,7 +138,6 @@ footer {
     }
     h1{
         font-size: 32px;
-/*         border: 1px solid; */
         width: 80%;
         padding: 10px;
         margin-bottom: 0;
@@ -140,7 +146,6 @@ footer {
         font-size: 16px;
         margin-bottom: 5%;
         line-height: 1.7;
-/*         border: 1px solid; */
     }
     h1, section p, .btn {
         margin-left: 50px;
@@ -155,4 +160,11 @@ footer {
         text-align: center;
         padding: 10px;
     }
+}
+
+@media screen and (min-width: 1200px){
+    section {
+        margin-top: 200px;
+    }
+    
 }
